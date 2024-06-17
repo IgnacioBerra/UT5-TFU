@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "50a87e8d-d772-41c9-851d-db432866d14c",
+		"name": "Olimpiadas",
+		"description": "UT5 TFU, Grupo 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26022719"
+	},
+	"item": [
+		{
+			"name": "GetOlimpiada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/olimpiada",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"olimpiada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostOlimpiada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"París\",\r\n    \"año\":2024,\r\n    \"ubicacion\":\"Francia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/olimpiada",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"olimpiada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDisciplina",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/disciplina",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disciplina"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostDisciplina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Carrera\",\r\n    \"tipo\":\"400 metros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/disciplina",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disciplina"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
