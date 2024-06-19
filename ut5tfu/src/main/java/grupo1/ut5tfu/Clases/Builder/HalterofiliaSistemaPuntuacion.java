@@ -1,11 +1,15 @@
 package grupo1.ut5tfu.Clases.Builder;
 
+import org.xml.sax.HandlerBase;
+
 import grupo1.ut5tfu.Clases.Disciplina;
+import grupo1.ut5tfu.Clases.Handler.Handler;
+import grupo1.ut5tfu.Clases.Handler.HandlerCoeficiente;
+import grupo1.ut5tfu.Clases.Handler.HandlerSuma;
 
-public class HalterofiliaSistemaPuntuacion extends BuilderSistemaPuntuacion  {
+public class HalterofiliaSistemaPuntuacion extends BuilderSistemaPuntuacion {
 
-
-    public HalterofiliaSistemaPuntuacion(){
+    public HalterofiliaSistemaPuntuacion() {
         super.sistemaPuntuacion = new SistemaPuntuacion();
     }
 
@@ -15,7 +19,7 @@ public class HalterofiliaSistemaPuntuacion extends BuilderSistemaPuntuacion  {
         throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
     }
 
-     @Override
+    @Override
     public void buildDisciplina() {
         Disciplina dis = new Disciplina("HALTEROFILIA", "halterofilia");
         sistemaPuntuacion.setDisciplina(dis);
@@ -26,5 +30,15 @@ public class HalterofiliaSistemaPuntuacion extends BuilderSistemaPuntuacion  {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buildJueces'");
     }
-    
+
+    @Override
+    public double puntuar(int pesoAtleta, double pesoLevantado1, double pesoLevantado2, String genero) {
+        Handler h = new HandlerSuma(pesoAtleta);
+        h.setNextHandler(new HandlerCoeficiente());
+        double puntaje = h.handle(pesoLevantado1, pesoLevantado2, genero);
+        System.out.println(puntaje);
+        
+        return puntaje;
+    }
+
 }

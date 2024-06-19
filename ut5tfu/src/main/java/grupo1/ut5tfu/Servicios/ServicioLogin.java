@@ -2,8 +2,11 @@ package grupo1.ut5tfu.Servicios;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import grupo1.ut5tfu.Clases.Login;
 
+@Service
 public class ServicioLogin {
 
     public Optional<Login> findById(Integer ci) {

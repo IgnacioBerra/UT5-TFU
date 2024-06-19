@@ -25,5 +25,11 @@ public class NatacionSistemaPuntuacion extends BuilderSistemaPuntuacion{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buildJueces'");
     }
+
+    @Override
+    public double puntuar(int peso, double peso1, double peso2, String genero) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
+    }
     
 }

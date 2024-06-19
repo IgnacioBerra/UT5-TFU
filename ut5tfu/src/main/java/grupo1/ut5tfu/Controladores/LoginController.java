@@ -21,7 +21,7 @@ public class LoginController {
     @Autowired
     private ServicioLogin servicioLogin;
 
-    @Autowired
+
     private JWTUtils JWTUtil;
 
     private String hashMD5(String input) {
