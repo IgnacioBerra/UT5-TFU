@@ -37,7 +37,7 @@ public class LoginController {
                 loginObj.setCi(login.getCi());
                 loginObj.setPassword(hashedPass);
                 String jwt = JWTUtils.getInstance().generarJWT(loginObj.getCi(), loginObj.getPassword());
-                login.setJWT(ci, jwt);
+                servicioLogin.setJWT(ci, jwt);
                 return ResponseEntity.ok("{\"token\": \"" + jwt + "\"}");
             } else {
                 return ResponseEntity.badRequest().body("Contraseña incorrecta: " + contrasenia + "    actual: " + servicioLogin.getContrasenia(ci) + "    hashed: " + hashedPass);

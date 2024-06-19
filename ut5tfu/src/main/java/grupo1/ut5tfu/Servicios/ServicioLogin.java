@@ -28,6 +28,11 @@ public class ServicioLogin {
         return login;
     }
 
+    public void setJWT(Integer ci, String jwt) {
+        String sql = "UPDATE Login SET JWT = ? WHERE ci = ?";
+        dbConnection.update(sql, jwt, ci);
+    }
+
     public Object getContrasenia(Integer ci) {
         String sql = "SELECT contrasenia FROM Login WHERE ci = ?";
         return dbConnection.queryForObject(sql, new Object[]{ci}, String.class);
