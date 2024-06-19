@@ -73,3 +73,10 @@ CREATE TABLE Record(
     FOREIGN KEY (equipo) REFERENCES Equipo(nombre),
     FOREIGN KEY(atleta_ci) REFERENCES Atleta(cedula)
 );
+
+CREATE TABLE Login(
+    ci int,
+    contrasenia VARCHAR(255),
+    jwt VARCHAR(255),
+    PRIMARY KEY(ci)
+);
