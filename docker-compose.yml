@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: contenedorADA
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: olimpiadasGrupo1
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - "3306:3306"
