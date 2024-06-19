@@ -16,7 +16,10 @@ public class HandlerCoeficiente extends Handler {
         return handleNext(sinclair(valor1, valor2,0.787004341,153.757), 0, genero);
     }
 
+    // Bibliografía:
+    // Sinclair Formula. (s. f.). BC Weightlifting Association. https://bcweightlifting.ca/sinclair-formula
+
     public double sinclair(double valor1, double valor2, double constante1, double constante2){
-        return valor2 * Math.pow(10, constante1 * Math.pow(Math.log10(valor2 / constante2), 2));
+        return valor1 * Math.pow(10, constante1 * Math.pow(Math.log10(valor2 / constante2), 2));
     }
 }
