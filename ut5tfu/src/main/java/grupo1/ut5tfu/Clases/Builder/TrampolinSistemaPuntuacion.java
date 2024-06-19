@@ -31,4 +31,10 @@ public class TrampolinSistemaPuntuacion extends BuilderSistemaPuntuacion {
         sistemaPuntuacion.setJueces(jueces);
     }
 
+    @Override
+    public double puntuar(int peso, double peso1, double peso2, String genero) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
+    }
+
 }
