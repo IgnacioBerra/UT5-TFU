@@ -21,15 +21,13 @@ public class LoginController {
     @Autowired
     private ServicioLogin servicioLogin;
 
-
-    private JWTUtils JWTUtil;
-
     private String hashMD5(String input) {
         return org.apache.commons.codec.digest.DigestUtils.md5Hex(input);
     }
 
     @PostMapping("/find/{ci}")
-    public ResponseEntity<?> findById(@PathVariable Integer ci, @RequestBody String contrasenia) {
+    public ResponseEntity<?> findById(@PathVariable Integer ci, @RequestBody Map<String, String> body) {
+        String contrasenia = body.get("contrasenia");
         String hashedPass = hashMD5(contrasenia);
         Optional<Login> loginOptional = servicioLogin.findById(ci);
         if (loginOptional.isPresent()) {
@@ -38,11 +36,11 @@ public class LoginController {
                 Login loginObj = new Login();
                 loginObj.setCi(login.getCi());
                 loginObj.setPassword(hashedPass);
-                String jwt = JWTUtil.generarJWT(loginObj.getCi(), loginObj.getPassword());
-                login.setJWT(ci, jwt);
+                String jwt = JWTUtils.getInstance().generarJWT(loginObj.getCi(), loginObj.getPassword());
+                servicioLogin.setJWT(ci, jwt);
                 return ResponseEntity.ok("{\"token\": \"" + jwt + "\"}");
             } else {
-                return ResponseEntity.badRequest().body("Contraseña incorrecta: " + contrasenia);
+                return ResponseEntity.badRequest().body("Contraseña incorrecta: " + contrasenia + "    actual: " + servicioLogin.getContrasenia(ci) + "    hashed: " + hashedPass);
             }
         }
 

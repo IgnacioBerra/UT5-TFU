@@ -15,6 +15,12 @@ public class NatacionSistemaPuntuacion extends BuilderSistemaPuntuacion{
     }
 
     @Override
+    public void puntuar(float dificultad, float ejecucion, float tiempo_vuelo){
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
+    }
+
+    @Override
     public void buildDisciplina() {
         Disciplina dis = new Disciplina("NATACION", "100 metros libre");
         sistemaPuntuacion.setDisciplina(dis);

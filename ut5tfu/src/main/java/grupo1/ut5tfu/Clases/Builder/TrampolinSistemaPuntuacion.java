@@ -2,9 +2,9 @@ package grupo1.ut5tfu.Clases.Builder;
 
 import grupo1.ut5tfu.Clases.Disciplina;
 
-public class SurfSistemaPuntuacion extends BuilderSistemaPuntuacion {
+public class TrampolinSistemaPuntuacion extends BuilderSistemaPuntuacion {
 
-    public SurfSistemaPuntuacion() {
+    public TrampolinSistemaPuntuacion() {
         super.sistemaPuntuacion = new SistemaPuntuacion();
     }
 
@@ -16,8 +16,7 @@ public class SurfSistemaPuntuacion extends BuilderSistemaPuntuacion {
 
     @Override
     public void puntuar(float dificultad, float ejecucion, float tiempo_vuelo){
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
+        
     }
 
     
@@ -30,12 +29,6 @@ public class SurfSistemaPuntuacion extends BuilderSistemaPuntuacion {
     @Override
     public void buildJueces(String[] jueces) {
         sistemaPuntuacion.setJueces(jueces);
-    }
-
-    @Override
-    public double puntuar(int peso, double peso1, double peso2, String genero) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
     }
 
 }
