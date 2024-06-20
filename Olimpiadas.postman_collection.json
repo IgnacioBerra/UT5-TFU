@@ -1,17 +1,42 @@
 {
 	"info": {
-		"_postman_id": "1a9a1e61-18ce-4ff0-8f40-c0907a39bcd0",
+		"_postman_id": "fd6f783c-49e2-49b6-b40f-392cdf97b850",
 		"name": "Olimpiadas",
 		"description": "UT5 TFU, Grupo 1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29590965"
+		"_exporter_id": "26022719"
 	},
 	"item": [
 		{
 			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contrasenia\":\"asd123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login/find/54802569",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"find",
+						"54802569"
+					]
+				}
 			},
 			"response": []
 		},
@@ -127,20 +152,12 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
 			"name": "halterofilia",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/puntuarHalterofilia?cedulaAtleta=54802569&peso1=75&peso2=78.5",
+					"raw": "http://localhost:8080/puntuarHalterofilia?cedulaAtleta=56448791&peso1=75&peso2=78.5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -152,7 +169,7 @@
 					"query": [
 						{
 							"key": "cedulaAtleta",
-							"value": "54802569"
+							"value": "56448791"
 						},
 						{
 							"key": "peso1",
