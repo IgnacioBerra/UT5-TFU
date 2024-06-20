@@ -4,6 +4,7 @@ import grupo1.ut5tfu.Clases.Atleta;
 import grupo1.ut5tfu.Clases.Disciplina;
 import grupo1.ut5tfu.Clases.Builder.BuilderSistemaPuntuacion;
 import grupo1.ut5tfu.Clases.Builder.HalterofiliaSistemaPuntuacion;
+import grupo1.ut5tfu.Clases.Builder.TrampolinSistemaPuntuacion;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,5 +52,10 @@ public class ServicioDisciplina {
 
 
         return puntaje;
+    }
+
+    public float puntuarTrampolin(int cedula, float dificultad, float ejecucion, float tiempo_vuelo) {
+        BuilderSistemaPuntuacion sistema = new TrampolinSistemaPuntuacion();
+        return sistema.puntuar(cedula, dificultad, ejecucion, tiempo_vuelo);
     }
 }
