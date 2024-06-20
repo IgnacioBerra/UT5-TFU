@@ -23,12 +23,15 @@ CREATE TABLE Entrenador(
     FOREIGN KEY (disciplina,categoria) REFERENCES Disciplina(nombre,tipo)
 );
 
+
 CREATE TABLE Atleta(
     cedula INT,
     nombre VARCHAR(100),
     edad int,
     disciplina VARCHAR (100),
     categoria VARCHAR(100),
+    peso int,
+    genero varchar(50),
     pais VARCHAR(100),
     PRIMARY KEY(cedula),
     FOREIGN KEY (disciplina,categoria) REFERENCES Disciplina(nombre,tipo)
@@ -51,6 +54,7 @@ CREATE TABLE Evento(
     FOREIGN KEY (disciplina,categoria) REFERENCES Disciplina(nombre,tipo),
     FOREIGN KEY (equipo) REFERENCES Equipo(nombre)
 );
+
 
 CREATE TABLE Resultado(
     puntaje FLOAT,
@@ -80,3 +84,6 @@ CREATE TABLE Login(
     jwt VARCHAR(255),
     PRIMARY KEY(ci)
 );
+
+insert into Disciplina(nombre,tipo) values ("Halterofilia", "LIBRE");
+insert into Atleta(cedula,nombre,edad,disciplina,categoria,peso,genero,pais) values (56448791,"Lucas Giffuni", 22,"Halterofilia","LIBRE",70,"Hombre", "Uruguay" );
