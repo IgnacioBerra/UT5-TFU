@@ -11,10 +11,9 @@ public abstract class BuilderSistemaPuntuacion {
 
     public abstract void puntuar();
     public abstract double puntuar(int peso, double peso1, double peso2, String genero);
-
-    public abstract void puntuar(float dificultad, float ejecucion, float tiempo_vuelo);
     public abstract void buildDisciplina();
     public abstract void buildJueces(String[] jueces);
+    public abstract float puntuar(int cedula, float dificultad, float ejecucion, float tiempo_vuelo);
     
 
 }

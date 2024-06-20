@@ -15,7 +15,7 @@ public class NatacionSistemaPuntuacion extends BuilderSistemaPuntuacion{
     }
 
     @Override
-    public void puntuar(float dificultad, float ejecucion, float tiempo_vuelo){
+    public float puntuar(int cedula, float dificultad, float ejecucion, float tiempo_vuelo){
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'puntuar'");
     }

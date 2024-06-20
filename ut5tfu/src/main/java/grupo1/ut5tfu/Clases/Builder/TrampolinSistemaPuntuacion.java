@@ -15,14 +15,14 @@ public class TrampolinSistemaPuntuacion extends BuilderSistemaPuntuacion {
     }
 
     @Override
-    public void puntuar(float dificultad, float ejecucion, float tiempo_vuelo){
-        
+    public float puntuar(int cedula, float dificultad, float ejecucion, float tiempo_vuelo){
+        return (float) (dificultad + ejecucion + tiempo_vuelo);
     }
 
     
     @Override
     public void buildDisciplina() {
-        Disciplina dis = new Disciplina("SURF", "libre");
+        Disciplina dis = new Disciplina("TRAMPOLIN", "libre");
         sistemaPuntuacion.setDisciplina(dis);
     }
 
