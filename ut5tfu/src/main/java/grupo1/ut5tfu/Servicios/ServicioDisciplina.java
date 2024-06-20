@@ -38,10 +38,8 @@ public class ServicioDisciplina {
         return this.dbConnection.query(sql1, new BeanPropertyRowMapper<>(Disciplina.class));
     }
 
-    public double puntuarDisciplina(String disciplina, double cedula, double peso1, double peso2) {
+    public double puntuarHalterofilia( double cedula, double peso1, double peso2) {
         double puntaje = 0;
-        switch (disciplina) {
-            case "Halterofilia":
                 String sql1 = "SELECT * FROM Atleta where cedula =" + cedula;
 
                 Atleta atleta = this.dbConnection.query(sql1, new BeanPropertyRowMapper<>(Atleta.class)).get(0);
@@ -50,11 +48,7 @@ public class ServicioDisciplina {
                 BuilderSistemaPuntuacion sistema = new HalterofiliaSistemaPuntuacion();
 
                 puntaje = sistema.puntuar(atleta.getPeso(), peso1, peso2, atleta.getGenero());
-                break;
 
-            default:
-                break;
-        }
 
         return puntaje;
     }

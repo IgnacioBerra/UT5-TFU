@@ -31,10 +31,10 @@ public class ControladorDisciplina {
         return servicioDisciplina.getAll();
     }
 
-    @PostMapping("/puntuarDisciplina")
-    public ResponseEntity<Double> puntuar(@RequestParam String disciplina, @RequestParam int cedulaAtleta,
+    @PostMapping("/puntuarHalterofilia")
+    public ResponseEntity<Double> puntuarHalterofilia( @RequestParam int cedulaAtleta,
             @RequestParam double peso1, @RequestParam double peso2)
             throws ClassNotFoundException, SQLException {
-        return ResponseEntity.ok(servicioDisciplina.puntuarDisciplina(disciplina, cedulaAtleta, peso1, peso2));
+        return ResponseEntity.ok(servicioDisciplina.puntuarHalterofilia( cedulaAtleta, peso1, peso2));
     }
 }

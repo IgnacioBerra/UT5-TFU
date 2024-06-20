@@ -1,0 +1,190 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /puntuarDisciplina:
+    post:
+      tags:
+      - controlador-disciplina
+      operationId: puntuar
+      parameters:
+      - name: disciplina
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: cedulaAtleta
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: peso1
+        in: query
+        required: true
+        schema:
+          type: number
+          format: double
+      - name: peso2
+        in: query
+        required: true
+        schema:
+          type: number
+          format: double
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: number
+                format: double
+  /olimpiada:
+    get:
+      tags:
+      - controlador-olimpiada
+      operationId: getOlimpiada
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Olimpiada"
+    post:
+      tags:
+      - controlador-olimpiada
+      operationId: insertOlimpiada
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Olimpiada"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /login/register:
+    post:
+      tags:
+      - login-controller
+      operationId: save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /login/find/{ci}:
+    post:
+      tags:
+      - login-controller
+      operationId: findById
+      parameters:
+      - name: ci
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /disciplina:
+    get:
+      tags:
+      - controlador-disciplina
+      operationId: getOlimpiada_1
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Disciplina"
+    post:
+      tags:
+      - controlador-disciplina
+      operationId: insertDisciplina
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Disciplina"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: boolean
+components:
+  schemas:
+    Olimpiada:
+      type: object
+      properties:
+        nombre:
+          type: string
+        año:
+          type: integer
+          format: int32
+        ubicacion:
+          type: string
+    BuilderSistemaPuntuacion:
+      type: object
+      properties:
+        sistemaPuntuacion:
+          $ref: "#/components/schemas/SistemaPuntuacion"
+    Disciplina:
+      type: object
+      properties:
+        nombre:
+          type: string
+        tipo:
+          type: string
+        sistemaPuntuacion:
+          $ref: "#/components/schemas/BuilderSistemaPuntuacion"
+    SistemaPuntuacion:
+      type: object
+      properties:
+        disciplina:
+          $ref: "#/components/schemas/Disciplina"
+        jueces:
+          type: array
+          writeOnly: true
+          items:
+            type: string
