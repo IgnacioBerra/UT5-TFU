@@ -1,12 +1,41 @@
 {
 	"info": {
-		"_postman_id": "50a87e8d-d772-41c9-851d-db432866d14c",
+		"_postman_id": "1a9a1e61-18ce-4ff0-8f40-c0907a39bcd0",
 		"name": "Olimpiadas",
 		"description": "UT5 TFU, Grupo 1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26022719"
+		"_exporter_id": "29590965"
 	},
 	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "trampolin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/disciplina/find/54802569",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disciplina",
+						"find",
+						"54802569"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "GetOlimpiada",
 			"request": {
@@ -92,6 +121,47 @@
 					"port": "8080",
 					"path": [
 						"disciplina"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "halterofilia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/puntuarHalterofilia?cedulaAtleta=54802569&peso1=75&peso2=78.5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"puntuarHalterofilia"
+					],
+					"query": [
+						{
+							"key": "cedulaAtleta",
+							"value": "54802569"
+						},
+						{
+							"key": "peso1",
+							"value": "75"
+						},
+						{
+							"key": "peso2",
+							"value": "78.5"
+						}
 					]
 				}
 			},
